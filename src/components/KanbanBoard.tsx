@@ -12,9 +12,9 @@ export const KanbanBoard = () => {
   const [draggedTask, setDraggedTask] = useState<Task | null>(null);
 
   const columns = [
-    { id: 'todo' as ColumnType, title: 'A Fazer' },
-    { id: 'doing' as ColumnType, title: 'Fazendo' },
-    { id: 'done' as ColumnType, title: 'Feito' }
+    { id: 'todo' as ColumnType, title: 'A Fazer', tasks: getTasksByColumn('todo') },
+    { id: 'doing' as ColumnType, title: 'Fazendo', tasks: getTasksByColumn('doing') },
+    { id: 'done' as ColumnType, title: 'Feito', tasks: getTasksByColumn('done') }
   ];
 
   const handleDragStart = (e: React.DragEvent, task: Task) => {
@@ -58,7 +58,7 @@ export const KanbanBoard = () => {
           <ColumnComponent
             key={column.id}
             column={column}
-            tasks={getTasksByColumn(column.id)}
+            tasks={column.tasks}
             onAddTask={() => {
               setEditingTask(null);
               setIsAddModalOpen(true);
