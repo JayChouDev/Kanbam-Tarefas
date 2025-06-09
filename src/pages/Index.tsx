@@ -6,7 +6,7 @@ const Index = () => {
       <header className="bg-white shadow-sm py-10">
         <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center">
           <h1 className="text-3xl font-bold text-gray-800">Kanban para Estudos</h1>
-          <p className="text-gray-600">Organize e Trabalhe Filho da Puta</p>
+          <p className="text-gray-600">Organize e Trabalhe</p>
         </div>
       </header>
 
